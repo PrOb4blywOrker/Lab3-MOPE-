@@ -139,7 +139,10 @@ class FractionalExperiment:
         final_k = [B[ts.index(i)] for i in ts if i in res]
         print('Коефіцієнти {} статистично незначущі, тому ми виключаємо їх з рівняння.'.format(
             [i for i in B if i not in final_k]))
-
+        
+        print('Коефіцієнти {}  значущі.'.format(
+            [i for i in B if i  in final_k]))
+        
         for j in range(self.n):
             self.y_new.append(self.regression([self.x[j][ts.index(i)] for i in ts if i in res], final_k))
 
